@@ -7,7 +7,7 @@ pipeline {
     stage('Clone') {
       steps {
         sh 'echo "Cloning"'
-        sh 'which docker'
+        sh 'echo `which docker`'
         sh 'echo $PATH'
       }
     }
