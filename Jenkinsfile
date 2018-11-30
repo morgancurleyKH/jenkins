@@ -9,6 +9,7 @@ pipeline {
         sh 'echo "Cloning"'
         sh 'echo `which docker`'
         sh 'echo $PATH'
+        sh 'node --version'
       }
     }
     stage('Analyze') {
@@ -20,7 +21,6 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "Building"'
-        sh 'node --version'
       }
     }
     stage('Deploy') {
