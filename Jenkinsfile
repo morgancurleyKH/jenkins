@@ -1,6 +1,8 @@
 pipeline {
-  agent any
-  stages {
+    agent {
+      docker { image 'node:7-alpine' }
+    }
+    stages {
     stage('Clone') {
       steps {
         sh 'echo "Cloning"'
@@ -15,6 +17,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "Building"'
+        sh 'node --version'
       }
     }
     stage('Deploy') {
